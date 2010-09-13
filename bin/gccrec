@@ -36,6 +36,7 @@ class GCCRec
     def initialize(file)
       @db = SQLite3::Database.new(file)
       @db.execute('create table gccrec (file text primary key on conflict replace, driver text, args text, workdir text)') rescue nil
+			@db.busy_timeout(10000)
     end
 
     def close
