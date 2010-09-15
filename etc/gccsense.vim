@@ -94,9 +94,8 @@ endfunction
 function! SetupGCCSense()
     if g:gccsenseUseOmniFunc
         setlocal omnifunc=GCCSenseComplete
-    else
-        setlocal completefunc=GCCSenseComplete
     endif
+		setlocal completefunc=GCCSenseComplete
 endfunction
 
 function! s:GCCSenseDiagnoseProgram(program, args, should_match, msg)
