@@ -58,7 +58,7 @@ function! GCCSenseComplete(findstart, base)
     else
         let buf = getline(1, '$')
         let filename = expand('%')
-        let tempfile = expand('%:h') . '/.gccsense.' . expand('%:t')
+        let tempfile = expand('%:p:h') . '/.gccsense.' . expand('%:t')
         call writefile(buf, tempfile)
 
         let gccrec = shellescape(g:gccsenseGCCRecProgram)
